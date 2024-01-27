@@ -23,6 +23,13 @@ jobs:
         with:
           node-version: '16'
 
+      - name: Setup Java and Maven
+        uses: actions/setup-java@v2
+        with:
+          java-version: '17'
+          distribution: 'adopt'
+          maven: true
+
       - name: Checkout repo
         uses: actions/checkout@v2
         with:

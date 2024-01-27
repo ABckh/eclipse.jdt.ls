@@ -2,6 +2,14 @@
 
 set -e
 
+# Ensure JAVA_HOME is set
+if [ -z "$JAVA_HOME" ]; then
+    echo "JAVA_HOME is not set. Please set it to your Java installation path."
+    exit 1
+fi
+
 rm -rf dist
 mkdir dist
-tar -czf dist/eclipse.jdt.ls.tar.gz -C eclipse.jdt.ls .
+cd eclipse.jdt.ls/
+JAVA_HOME=$JAVA_HOME ./mvnw clean verify -DskipTests
+tar -czf ../dist/eclipse.jdt.ls.tar.gz -C ./org.eclipse.jdt.ls.product/target/repository .
