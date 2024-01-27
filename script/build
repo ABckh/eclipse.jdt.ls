@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+set -e
+
+rm -rf dist
+mkdir dist
+tar -czf dist/eclipse.jdt.ls.tar.gz -C eclipse.jdt.ls .
