@@ -12,4 +12,11 @@ rm -rf dist
 mkdir dist
 cd eclipse.jdt.ls/
 JAVA_HOME=$JAVA_HOME ./mvnw clean verify -DskipTests
+
+# Download lombok-edge.jar
+Lombok_JAR_URL="https://projectlombok.org/lombok-edge.jar"
+curl -L -o lombok-edge.jar "$Lombok_JAR_URL"
+
+mv lombok-edge.jar org.eclipse.jdt.ls.product/target/repository/plugins
+
 tar -czf ../dist/eclipse.jdt.ls.tar.gz -C ./org.eclipse.jdt.ls.product/target/repository .
