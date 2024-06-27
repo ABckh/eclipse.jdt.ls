@@ -26,3 +26,4 @@ cp -f ../script/jdtls.py ./org.eclipse.jdt.ls.product/target/repository/bin/jdtl
 
 # Create the tar.gz
 tar -czf ../dist/eclipse.jdt.ls.tar.gz -C ./org.eclipse.jdt.ls.product/target/repository .
+zip -r ../dist/eclipse.jdt.ls.zip ./org.eclipse.jdt.ls.product/target/repository .
