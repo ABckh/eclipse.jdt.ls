@@ -14,7 +14,7 @@ mkdir dist
 
 # Build the JDT LS
 cd eclipse.jdt.ls/
-JAVA_HOME=$JAVA_HOME ./mvnw clean verify -DskipTests
+JAVA_HOME=$JAVA_HOME ./mvnw clean verify -U -DskipTests
 
 # Download lombok-edge.jar and put it in the plugins directory
 Lombok_JAR_URL="https://projectlombok.org/lombok-edge.jar"
