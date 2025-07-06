@@ -40,7 +40,7 @@ jobs:
         run: script/build
 
       - name: Upload tarball to workflow run if main branch
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: eclipse.jdt.ls.tar.gz
           path: dist/eclipse.jdt.ls.tar.gz
